@@ -43,7 +43,9 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    let rows = document.querySelectorAll("tr");
+
+    rows.forEach(row => row.deleteCell(-1));
 }
 
 // Set global variable for selected color
