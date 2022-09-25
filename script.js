@@ -22,6 +22,14 @@ function addR() {
 
 // Add a column
 function addC() {
+    let rows = document.querySelectorAll("tr");
+
+    rows.forEach(row => row.insertCell());
+
+    // first cell being added
+    if (rows.length === 0) {
+        addR();
+    }
 }
 
 // Remove a row
