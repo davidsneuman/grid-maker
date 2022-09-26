@@ -56,7 +56,12 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    let cells = document.querySelectorAll("td");
+    cells.forEach(cell => {
+        if (cell.style.backgroundColor === "") {
+            colorCell(cell);
+        }
+    });
 }
 
 // Fill all cells
@@ -72,10 +77,14 @@ function clearAll(){
 function createCell(row) {
     let cell = row.insertCell();
     cell.onclick = function () {
-        if (colorSelected !== undefined) {
-            cell.style.backgroundColor = colorSelected;
-        } else {
-            alert("Please select a color");
-        }
+        colorCell(cell, colorSelected)
     };
+}
+
+function colorCell(cell) {
+    if (colorSelected !== undefined) {
+        cell.style.backgroundColor = colorSelected;
+    } else {
+        alert("Please select a color");
+    }
 }
