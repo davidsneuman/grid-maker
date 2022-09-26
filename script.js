@@ -66,7 +66,8 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    let cells = document.querySelectorAll("td");
+    cells.forEach(cell => colorCell(cell));
 }
 
 // Clear all cells
@@ -84,7 +85,5 @@ function createCell(row) {
 function colorCell(cell) {
     if (colorSelected !== undefined) {
         cell.style.backgroundColor = colorSelected;
-    } else {
-        alert("Please select a color");
     }
 }
