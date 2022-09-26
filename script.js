@@ -11,11 +11,11 @@ function addR() {
 
     // first cell being added
     if (colLength === 0) {
-        row.insertCell();
+        createCell(row);
     }
 
     for (let i = 0; i < colLength; i++) {
-        row.insertCell();
+        createCell(row);
     }
 
 }
@@ -24,7 +24,7 @@ function addR() {
 function addC() {
     let rows = document.querySelectorAll("tr");
 
-    rows.forEach(row => row.insertCell());
+    rows.forEach(row => createCell(row));
 
     // first cell being added
     if (rows.length === 0) {
@@ -67,4 +67,15 @@ function fillAll(){
 // Clear all cells
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
+}
+
+function createCell(row) {
+    let cell = row.insertCell();
+    cell.onclick = function () {
+        if (colorSelected !== undefined) {
+            cell.style.backgroundColor = colorSelected;
+        } else {
+            alert("Please select a color");
+        }
+    };
 }
