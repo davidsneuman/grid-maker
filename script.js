@@ -1,6 +1,4 @@
 // Declare global variables
-let numRows = 0;
-let numCols = 0;
 let colorSelected; 
 
 // Add a row
