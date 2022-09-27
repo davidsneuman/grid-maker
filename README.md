@@ -1,2 +1,4 @@
-# grid-maker-starter-code
-Starter code for Assignment 3 - Grid Maker.
+# grid-maker
+David Neuman
+
+Github: [davidsneuman](https://github.com/davidsneuman)
