@@ -72,13 +72,16 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    let cells = document.querySelectorAll("td");
+    cells.forEach(cell => {
+        cell.style.backgroundColor = "";
+    });
 }
 
 function createCell(row) {
     let cell = row.insertCell();
     cell.onclick = function () {
-        colorCell(cell, colorSelected)
+        colorCell(cell, colorSelected);
     };
 }
 
